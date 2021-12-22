@@ -67,21 +67,21 @@ class GettingStarted extends React.Component {
                             <div className="row">
                                 <div className="col-md-4">
                                 <div className="service-item first-item">
-                                    <div className><img src="assets/images/hardware.png" alt /></div>
+                                    <div className><img src="assets/images/hardware.png" alt="img" /></div>
                                     <h4>Mining hardware is ready</h4>
                                     <p>Worldwide Servers. Low latency, calculating more jobs</p>
                                 </div>
                                 </div>
                                 <div className="col-md-4">
                                 <div className="service-item second-item">
-                                    <div className><img src="assets/images/cryp_currency.png" alt /></div>
+                                    <div className><img src="assets/images/cryp_currency.png" alt="img" /></div>
                                     <h4>ALTERNATIVE CRYPTOCURRENCIES</h4>
                                     <p>exchange in your favourite currency after withdrawal</p>
                                 </div>
                                 </div>
                                 <div className="col-md-4">
                                 <div className="service-item third-item">
-                                    <div className><img src="assets/images/wallet.png" alt /></div>
+                                    <div className><img src="assets/images/wallet.png" alt="img" /></div>
                                     <h4>GET INSTANT WITHDRAWAL</h4>
                                     <p>Don't wait for hours, get your coins after maximum one hour</p>
                                 </div>
@@ -127,7 +127,7 @@ class GettingStarted extends React.Component {
                         <div className="row">
                             <div className="col-md-6 col-sm-12"><sup>Decentralized</sup><h2>Mining Our core focus</h2><p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.Lorem ipsum dolor sit amet, has at lorem utin mucius, elitro dicam sit malorum. Fugit convenire adhuc putant eam. scripta iudicabit, dicit le persius ponderum id nec.</p>
                             <p>Lorem ipsum dolor sit amet, has at lorem utin mucius, elitro dicam sit malorum. Fugit convenire adhuc putant eam. scripta iudicabit, dicit le persius ponderum id nec.</p></div>
-                            <div className="col-md-6 col-sm-12"><img src="assets/images/cryp_currency_collage.jpg" alt /></div>
+                            <div className="col-md-6 col-sm-12"><img src="assets/images/cryp_currency_collage.jpg" alt="img" /></div>
                         </div>
                         </div>
                         <div className="inner">
