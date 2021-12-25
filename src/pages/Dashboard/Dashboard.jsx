@@ -13,7 +13,7 @@ class Dashboard extends React.Component {
 
                     <div id="main">
                         {/* Header */}
-                        <Header />
+                        <Header success= {localStorage.getItem("user")}/>
                         {/* Banner */}
                         <section className="main-banner">
                         <div className="container-fluid">
