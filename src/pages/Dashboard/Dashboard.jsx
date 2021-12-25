@@ -5,8 +5,7 @@ import '../../assets/css/templatemo-style.css';
 import Header from '../../component/Header'
 import SideBar from '../../component/SideBar';
 
-class Dashboard extends React.Component {
-    render(){
+function Dashboard() {
         return (
             <Fragment>
                 <div id="wrapper">
@@ -28,6 +27,45 @@ class Dashboard extends React.Component {
                             <div className="row">
                             <div className="col-12 headings">
                                 <h1>Track your earnings</h1>
+                                <div className="input-group mb-3">
+                                    <input type="text" className="form-control" placeholder="Enter Payment Address" />
+                                    <div className="input-group-append">
+                                        <button className="btn btn-outline-warning" type="button" id="live-stats-button">Track Live Stats</button>
+                                    </div>
+                                </div>
+
+                                <div className="card">
+                                    <div className="card-header">
+                                        LIVE STATS
+                                    </div>
+                                    <div class="card-body">
+                                        <div className="container-fluid">
+                                        <div className="d-flex flex-column flex-lg-row justify-content-lg-between">
+                                                <div>
+                                                    <p className="text-dark">Hash Rate</p>
+                                                    <h5>0 H/s</h5>
+                                                </div>
+                                                <div>
+                                                    <p>Total Hashes</p>
+                                                    <h5>22,912,142.590</h5>
+                                                </div>
+                                                <div>
+                                                    <p>Total Due</p>
+                                                    <h5>0.0000004959 XMR</h5>
+                                                </div>
+                                                <div>
+                                                    <p>Total Paid</p>
+                                                    <h5>121.5834262884 XMR</h5>
+                                                </div>
+                                                <div>
+                                                    <p>Total Point</p>
+                                                    <h5>1,215,800</h5>
+                                                </div>
+                                        </div>
+
+                                        </div>
+                                    </div>
+                                </div>
                                 
                             </div>
                             </div>
@@ -146,7 +184,6 @@ class Dashboard extends React.Component {
                 </div>
             </Fragment>
         )
-    }
 }
 
 export default Dashboard
