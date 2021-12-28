@@ -1,4 +1,5 @@
-import React from 'react'
+import axios from 'axios';
+import React, {useState, useEffect} from 'react';
 import { Fragment } from 'react/cjs/react.production.min'
 import '../../assets/css/bootstrap.css'
 import '../../assets/css/templatemo-style.css';
@@ -6,6 +7,30 @@ import Header from '../../component/Header'
 import SideBar from '../../component/SideBar';
 
 function Dashboard() {
+    const [isShow, setIsShow] = useState(false)
+    const [paymentAddress, setPaymentAddress] = useState()
+    const [data, setData] =  useState({})
+    const handleStats = async () =>{
+        try{
+            await axios.get(`https://xmrminerpro.com/api/miner/${paymentAddress}/stats`)
+                .then(response =>{
+                    setIsShow(true)
+                    setInterval(function(){
+                        setData(response.data);
+                    },1000)
+                    
+                })
+        }catch(err){
+            console.log(err)
+        }
+
+            
+    }
+    
+    
+  // useEffect(handleStats, [])
+
+       
         return (
             <Fragment>
                 <div id="wrapper">
@@ -28,14 +53,15 @@ function Dashboard() {
                             <div className="col-12 headings">
                                 <h1>Track your earnings</h1>
                                 <div className="input-group mb-3">
-                                    <input type="text" className="form-control" placeholder="Enter Payment Address" />
+                                    <input type="text" className="form-control" placeholder="Enter Payment Address" onChange={e => setPaymentAddress(e.target.value)} />
                                     <div className="input-group-append">
-                                        <button className="btn btn-outline-warning" type="button" id="live-stats-button">Track Live Stats</button>
+                                        <button className="btn btn-outline-warning" type="button" onClick={handleStats}>Track Live Stats</button>
                                     </div>
                                 </div>
 
+                                {isShow &&
                                 <div className="card">
-                                    <div className="card-header">
+                                    <div className="card-header bg-warning">
                                         LIVE STATS
                                     </div>
                                     <div class="card-body">
@@ -47,25 +73,26 @@ function Dashboard() {
                                                 </div>
                                                 <div>
                                                     <p>Total Hashes</p>
-                                                    <h5>22,912,142.590</h5>
+                                                    <h5>{data.totalHashes}</h5>
                                                 </div>
                                                 <div>
                                                     <p>Total Due</p>
-                                                    <h5>0.0000004959 XMR</h5>
+                                                    <h5>{data.amtDue} XMR</h5>
                                                 </div>
                                                 <div>
                                                     <p>Total Paid</p>
-                                                    <h5>121.5834262884 XMR</h5>
+                                                    <h5>{data.amtPaid} XMR</h5>
                                                 </div>
                                                 <div>
                                                     <p>Total Point</p>
-                                                    <h5>1,215,800</h5>
+                                                    <h5>{data.totalPoint}</h5>
                                                 </div>
                                         </div>
 
                                         </div>
                                     </div>
                                 </div>
+                                }
                                 
                             </div>
                             </div>

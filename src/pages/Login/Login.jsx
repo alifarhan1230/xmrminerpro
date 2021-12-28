@@ -7,12 +7,12 @@ import SideBar from '../../component/SideBar';
 import axios from 'axios';
 
 
-function Login(props) {
-    
+
+function Login(props) {   
+    const [loading, setLoading] = useState(false) 
     const [username, setUsername] = useState()
     const [password, setPassword] = useState()
     const [success, setSuccess]  = useState()
-    const isLogin = []
     let navigate = useNavigate()
 
     useEffect(() => {
@@ -28,15 +28,18 @@ function Login(props) {
     }
 
     const handleSubmit= async (e) =>{
+        setLoading(true)
         e.preventDefault();
         await axios.post('https://xmrminerpro.com/api/authenticate',{username, password})
             .then(res =>{
-                setSuccess(res)
+                setSuccess(res) 
+                setLoading(false) 
                 localStorage.setItem("user", JSON.stringify(res));
-                //console.log(success.data.success)
                 toDashboard()
+                
             })
-            .catch(err => {   
+            .catch(err => { 
+                setLoading(false)  
                 console.log(err)
             })
     }
@@ -46,10 +49,11 @@ function Login(props) {
         <div id="wrapper">
             {/* Main */}
             <div id="main">
+            
                 {/* Header */}
-                <Header success= {success}/>        
+                <Header success= {success}/>                   
                 <div className="inner">
-                <section className="container-fluid">
+                <section className="container-fluid">                 
                     <div className="card">
                     <div className="card-header btn_blue">
                         <div className='row'>
@@ -77,7 +81,10 @@ function Login(props) {
                             </div>
                         </div>
                         <div className="col-12 headings mt-5">
-                            <button type="submit" className="btn btn_orange btn-sm btn-block">LOGIN</button>
+                            <button type="submit" className="btn btn_orange btn-sm btn-block"
+                            disabled={loading}>{loading &&<div className="spinner-border text-primary" role="status">
+                            <span className="sr-only">Loading...</span>
+                            </div>}LOGIN</button>
                         </div>
                         
                     </form>
@@ -97,6 +104,7 @@ function Login(props) {
             {/* Sidebar */}
             <SideBar />
         </div>
+        
 
         </Fragment>
     )
