@@ -46,7 +46,7 @@ function Header (props) {
             <Dropdown.Menu variant="dark">
 
               <Dropdown.Item href="/payment-threshold">Payment Threshold</Dropdown.Item>
-              <Dropdown.Item href="/email-setings">Email Setings</Dropdown.Item>
+              <Dropdown.Item href="/email-setting">Email Setings</Dropdown.Item>
               <Dropdown.Item href="/change-password">Change Password</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item href="/" onClick={logOut}>Logout</Dropdown.Item>
@@ -74,7 +74,7 @@ function Header (props) {
             <Dropdown.Menu variant="dark">
 
               <Dropdown.Item href="/payment-threshold">Payment Threshold</Dropdown.Item>
-              <Dropdown.Item href="/email-setings">Email Setings</Dropdown.Item>
+              <Dropdown.Item href="/email-setting">Email Setings</Dropdown.Item>
               <Dropdown.Item href="/change-password">Change Password</Dropdown.Item>
               <Dropdown.Divider />
               <Dropdown.Item href="/" onClick={logOut}>Logout</Dropdown.Item>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
-import { Dashboard, Home, Login, GettingStarted, Rewards, Support, Faq  } from '../../pages/'
+import { Dashboard, Home, Login, GettingStarted, Rewards, Support, Faq, PaymentThreshold, EmailSetting, ChangePassword   } from '../../pages/'
+
 
 
 const Navigasi = () => {
@@ -14,6 +15,9 @@ const Navigasi = () => {
                     <Route exact path ="/rewards" element={<Rewards />} />
                     <Route exact path ="/support" element={<Support />} />
                     <Route exact path ="/faq" element={<Faq />} />
+                    <Route exact path ="/payment-threshold" element={<PaymentThreshold />} />
+                    <Route exact path ="/email-setting" element={<EmailSetting />} />
+                    <Route exact path ="/change-password" element={<ChangePassword />} />
                 </Routes>
         </Router>
     )       
